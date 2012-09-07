@@ -163,7 +163,7 @@ class Ui(object):
         # Update the status bar
         self._status_bar.erase()
         if w > 2:
-            self._status_bar.addstr(0, 0, truncate(self._status, w-1).encode(self._code))
+            self._status_bar.addstr(0, 0, truncate(self._status.decode(self._code, "ignore"), w-1).encode(self._code))
         self._status_bar.refresh()
 
     def _run_pager(self):
